@@ -6,7 +6,7 @@ extends Node2D
 @onready var feedback_label = $UI/FeedbackLabel
 @onready var respiration_bar = $RespirationBar
 
-var letters = "ASDFJKLÑ"  # Letras válidas para el minijuego
+var letters = "ASDFJKLÑ"
 
 func _ready():
 	bubble_timer.timeout.connect(_on_bubble_timer_timeout)
@@ -22,12 +22,12 @@ func _on_bubble_timer_timeout():
 
 func _unhandled_input(event):
 	if event is InputEventKey and event.pressed:
-		var pressed_letter = event.unicode.to_upper()
-		for bubble in bubbles_container.get_children():
+		var pressed_letter = char(event.unicode).to_upper()
+		for bubble in $BubblesContainer.get_children():
 			if bubble.letter == pressed_letter and abs(bubble.global_position.y - $Player.global_position.y) < 50:
 				bubble.queue_free()
-				feedback_label.text = "¡Bien!"
-				respiration_bar.value += 10
+				$UI/FeedbackLabel.text = "¡Bien!"
+				$RespirationBar.value += 10
 				return
-		feedback_label.text = "Intenta de nuevo"
-		respiration_bar.value -= 5
+		$UI/FeedbackLabel.text = "Intenta de nuevo"
+		$RespirationBar.value -= 5
