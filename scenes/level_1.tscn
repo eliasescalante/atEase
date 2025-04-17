@@ -20,7 +20,7 @@ position = Vector2(227, 478)
 [node name="BubblesContainer" type="Node2D" parent="."]
 position = Vector2(491, 252)
 
-[node name="RespirationBar" type="TextureProgressBar" parent="."]
+[node name="RespirationBar" type="ProgressBar" parent="."]
 offset_left = 1053.0
 offset_top = 336.0
 offset_right = 1108.0
