@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsimwv51sdjhc"]
+[gd_scene load_steps=4 format=3 uid="uid://dsimwv51sdjhc"]
 
 [ext_resource type="PackedScene" uid="uid://5kxehfwigglt" path="res://scenes/player.tscn" id="1_014kd"]
 [ext_resource type="Script" uid="uid://oyf12nifre7x" path="res://scripts/level_1.gd" id="1_bswci"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bswci"]
+font_size = 46
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_bswci")
@@ -15,6 +18,7 @@ color = Color(0.823932, 0.579755, 0.513106, 1)
 position = Vector2(227, 478)
 
 [node name="BubblesContainer" type="Node2D" parent="."]
+position = Vector2(491, 252)
 
 [node name="RespirationBar" type="TextureProgressBar" parent="."]
 offset_left = 1053.0
@@ -30,5 +34,6 @@ offset_left = 86.0
 offset_top = 34.0
 offset_right = 308.0
 offset_bottom = 101.0
+label_settings = SubResource("LabelSettings_bswci")
 
 [node name="BubbleSpawner" type="Timer" parent="."]
