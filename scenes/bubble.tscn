@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsndybti0xi13"]
+
+[ext_resource type="Script" uid="uid://bn7udhw5ll51v" path="res://scripts/Bubble.gd" id="1_2vdav"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pm753"]
+font_size = 40
+
+[node name="Bubble" type="Node2D"]
+script = ExtResource("1_2vdav")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "A"
+label_settings = SubResource("LabelSettings_pm753")

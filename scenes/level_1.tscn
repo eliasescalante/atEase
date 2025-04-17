@@ -1,7 +1,34 @@
-[gd_scene format=3 uid="uid://dsimwv51sdjhc"]
+[gd_scene load_steps=3 format=3 uid="uid://dsimwv51sdjhc"]
+
+[ext_resource type="PackedScene" uid="uid://5kxehfwigglt" path="res://scenes/player.tscn" id="1_014kd"]
+[ext_resource type="Script" uid="uid://oyf12nifre7x" path="res://scripts/level_1.gd" id="1_bswci"]
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_bswci")
 
 [node name="fondo" type="ColorRect" parent="."]
 offset_right = 1158.0
 offset_bottom = 645.0
+color = Color(0.823932, 0.579755, 0.513106, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_014kd")]
+position = Vector2(227, 478)
+
+[node name="BubblesContainer" type="Node2D" parent="."]
+
+[node name="RespirationBar" type="TextureProgressBar" parent="."]
+offset_left = 1053.0
+offset_top = 336.0
+offset_right = 1108.0
+offset_bottom = 601.0
+fill_mode = 3
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="FeedbackLabel" type="Label" parent="UI"]
+offset_left = 86.0
+offset_top = 34.0
+offset_right = 308.0
+offset_bottom = 101.0
+
+[node name="BubbleSpawner" type="Timer" parent="."]
