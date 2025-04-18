@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var letter := "A"
-var speed := 80
+@export var speed := 80
 
 func _ready():
 	$Label.text = letter
