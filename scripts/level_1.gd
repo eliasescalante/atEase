@@ -3,15 +3,16 @@ extends Node2D
 @onready var bubbles_container = $BubblesContainer
 @onready var bubble_scene = preload("res://scenes/bubble.tscn")
 @onready var bubble_timer = $BubbleSpawner
-@onready var feedback_label = $UI/FeedbackLabel
 @onready var respiration_bar = $RespirationBar
+
+@export var points_bar = 10
+@export var points_bar_subtract = 5
 
 var letters = "ASDFJKLÑ"
 
 func _ready():
 	bubble_timer.timeout.connect(_on_bubble_timer_timeout)
 	bubble_timer.start()
-	feedback_label.text = ""
 
 func _on_bubble_timer_timeout():
 	var bubble = bubble_scene.instantiate()
@@ -26,8 +27,6 @@ func _unhandled_input(event):
 		for bubble in $BubblesContainer.get_children():
 			if bubble.letter == pressed_letter and abs(bubble.global_position.y - $Player.global_position.y) < 50:
 				bubble.queue_free()
-				$UI/FeedbackLabel.text = "¡Bien!"
-				$RespirationBar.value += 10
+				$RespirationBar.value += points_bar
 				return
-		$UI/FeedbackLabel.text = "Intenta de nuevo"
-		$RespirationBar.value -= 5
+		$RespirationBar.value -= points_bar_subtract
