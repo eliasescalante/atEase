@@ -22,7 +22,7 @@ extends Node2D
 @export var bubble_timer_min_wait: float = 0.8
 @export var bubble_timer_max_wait: float = 3
 
-var letters = "ASDFJKLN"
+var letters = "ASDFJKLNEIC"
 
 func _ready():
 	timeLimit_timer.timeout.connect(_on_timeLimit_timer_timeout)
