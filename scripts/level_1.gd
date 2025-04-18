@@ -16,10 +16,13 @@ extends Node2D
 @export var color_bad = Color(0, 0, 1, 1)  # Blue
 
 #Bubbles
-@export var bubble_max_vel = 150
-@export var bubble_min_vel = 40
+@export var bubble_max_vel = 400
+@export var bubble_min_vel = 80
 
-var letters = "ASDFJKLN"
+@export var bubble_timer_min_wait: float = 0.8
+@export var bubble_timer_max_wait: float = 3
+
+var letters = "ASDFJKLNEIC"
 
 func _ready():
 	timeLimit_timer.timeout.connect(_on_timeLimit_timer_timeout)
@@ -41,6 +44,7 @@ func _process(delta):
 	var interpolation_value = breathing_bar.value / breathing_bar.max_value
 	if breathing_bar:
 		breathing_bar.modulate = lerp(color_good, color_bad, interpolation_value)
+	
 
 func _on_timeLimit_timer_timeout():
 	# Trigger scene change when the timer runs out
@@ -56,6 +60,7 @@ func _on_bubble_timer_timeout():
 	var side_offset = -100 if randf() > 0.5 else 100
 	bubble.position = $Player.global_position + Vector2(side_offset, 0)
 	bubbles_container.add_child(bubble)
+	bubble_timer.start(lerp(bubble_timer_min_wait, bubble_timer_max_wait, interpolation_value))
 
 func _unhandled_input(event):
 	if event is InputEventKey and event.pressed:
@@ -66,8 +71,6 @@ func _unhandled_input(event):
 					bubble.queue_free()
 					respiration_bar.value -= points_bar
 					return
-			else:
-				continue
 		respiration_bar.value += points_bar_subtract
 
 func _on_drain_timer_timeout():

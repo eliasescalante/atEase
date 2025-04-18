@@ -7,18 +7,20 @@
 script = ExtResource("1_bswci")
 color_good = Color(0.0405001, 0.81, 0, 1)
 color_bad = Color(0.827464, 0.220709, 0.0999075, 1)
+bubble_timer_max_wait = 1.5
 
 [node name="fondo" type="ColorRect" parent="."]
+z_index = -1
 offset_top = 3.0
 offset_right = 1158.0
 offset_bottom = 648.0
 color = Color(0.823932, 0.579755, 0.513106, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_014kd")]
-position = Vector2(551, 470)
+position = Vector2(538, 470)
 
 [node name="BubblesContainer" type="Node2D" parent="."]
-position = Vector2(39, 247)
+position = Vector2(45, 151)
 
 [node name="RespirationBar" type="ProgressBar" parent="."]
 offset_left = 1043.0
@@ -29,6 +31,7 @@ value = 50.0
 fill_mode = 3
 
 [node name="BubbleSpawner" type="Timer" parent="."]
+one_shot = true
 
 [node name="TimeLimit" type="Timer" parent="."]
 wait_time = 90.0
