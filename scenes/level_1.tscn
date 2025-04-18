@@ -9,15 +9,16 @@ color_good = Color(0.0405001, 0.81, 0, 1)
 color_bad = Color(0.827464, 0.220709, 0.0999075, 1)
 
 [node name="fondo" type="ColorRect" parent="."]
+offset_top = 3.0
 offset_right = 1158.0
-offset_bottom = 645.0
+offset_bottom = 648.0
 color = Color(0.823932, 0.579755, 0.513106, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_014kd")]
-position = Vector2(227, 478)
+position = Vector2(551, 470)
 
 [node name="BubblesContainer" type="Node2D" parent="."]
-position = Vector2(491, 252)
+position = Vector2(39, 247)
 
 [node name="RespirationBar" type="ProgressBar" parent="."]
 offset_left = 1043.0
