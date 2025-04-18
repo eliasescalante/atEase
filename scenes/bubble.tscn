@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsndybti0xi13"]
+[gd_scene load_steps=4 format=3 uid="uid://bsndybti0xi13"]
 
 [ext_resource type="Script" uid="uid://bn7udhw5ll51v" path="res://scripts/Bubble.gd" id="1_2vdav"]
+[ext_resource type="Texture2D" uid="uid://b017ojtjicfk4" path="res://assets/bubble.png" id="2_pm753"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pm753"]
 font_size = 40
@@ -13,3 +14,9 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "A"
 label_settings = SubResource("LabelSettings_pm753")
+
+[node name="Bubble" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+position = Vector2(12.5, 28.5)
+scale = Vector2(0.261719, 0.261719)
+texture = ExtResource("2_pm753")
