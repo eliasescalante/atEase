@@ -18,9 +18,9 @@ position = Vector2(227, 478)
 position = Vector2(491, 252)
 
 [node name="RespirationBar" type="ProgressBar" parent="."]
-offset_left = 1053.0
-offset_top = 336.0
-offset_right = 1108.0
+offset_left = 1043.0
+offset_top = 118.0
+offset_right = 1131.0
 offset_bottom = 601.0
 value = 50.0
 fill_mode = 3
