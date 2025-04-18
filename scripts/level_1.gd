@@ -5,6 +5,7 @@ extends Node2D
 @onready var bubble_timer = $BubbleSpawner
 @onready var respiration_bar = $RespirationBar
 @onready var drain_timer = $BubbleSpawner # <- nuevo timer
+@onready var timeLimit_timer = $TimeLimit
 
 @export var points_bar = 10
 @export var points_bar_subtract = 5
@@ -21,9 +22,12 @@ extends Node2D
 var letters = "ASDFJKLN"
 
 func _ready():
+	timeLimit_timer.timeout.connect(_on_timeLimit_timer_timeout)
+	timeLimit_timer.start()
+	
 	bubble_timer.timeout.connect(_on_bubble_timer_timeout)
-	bubble_timer.start()
-
+	bubble_timer.start()	
+	
 	drain_timer.timeout.connect(_on_drain_timer_timeout) # <- conectamos
 	drain_timer.start() # <- comenzamos el timer
 	# Ensure the bar exists before accessing it
@@ -38,6 +42,9 @@ func _process(delta):
 	if breathing_bar:
 		breathing_bar.modulate = lerp(color_good, color_bad, interpolation_value)
 
+func _on_timeLimit_timer_timeout():
+	# Trigger scene change when the timer runs out
+	get_tree().change_scene_to_file("res://scenes/main.tscn")  # TODO Replace next scene
 
 
 func _on_bubble_timer_timeout():
