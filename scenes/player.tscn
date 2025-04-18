@@ -8,3 +8,12 @@
 position = Vector2(-1, 2)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_3vyb7")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+z_index = -1
+offset_top = -48.0
+offset_right = 728.0
+offset_bottom = 52.0
+border_color = Color(0.269074, 0.616212, 0.40671, 1)
+border_width = 3.6
+editor_only = false
