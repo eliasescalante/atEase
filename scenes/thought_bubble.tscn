@@ -25,3 +25,5 @@ offset_top = -10.0
 offset_right = 88.0
 offset_bottom = 13.0
 text = "soy una frase negativa"
+
+[connection signal="input_event" from="." to="." method="input_event"]

@@ -53,7 +53,7 @@ func _process(delta):
 
 func _on_timeLimit_timer_timeout():
 	# Trigger scene change when the timer runs out
-	get_tree().change_scene_to_file("res://scenes/main.tscn")  # TODO Replace next scene
+	get_tree().change_scene_to_file("res://scenes/level_2.tscn")  # TODO Replace next scene
 
 
 func _on_bubble_timer_timeout():

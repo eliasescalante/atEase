@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0527oetjec8k"]
+[gd_scene load_steps=3 format=3 uid="uid://bluaddhs2sixk"]
 
 [ext_resource type="PackedScene" uid="uid://5kxehfwigglt" path="res://scenes/player.tscn" id="1_3bmlt"]
-[ext_resource type="Script" uid="uid://derff1fji2u1f" path="res://scripts/level_2.gd" id="1_jm1iu"]
+[ext_resource type="Script" path="res://scripts/level_2.gd" id="1_jm1iu"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_jm1iu")
@@ -30,6 +30,7 @@ autostart = true
 [node name="DrainTimer" type="Timer" parent="."]
 
 [node name="ThoughtsContainer" type="Node2D" parent="."]
+z_index = 3
 
 [node name="Player" parent="." instance=ExtResource("1_3bmlt")]
-position = Vector2(591, 475)
+position = Vector2(449, 475)
