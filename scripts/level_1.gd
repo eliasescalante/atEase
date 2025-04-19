@@ -6,6 +6,7 @@ extends Node2D
 @onready var respiration_bar = $RespirationBar
 @onready var drain_timer = $BubbleSpawner # <- nuevo timer
 @onready var timeLimit_timer = $TimeLimit
+@onready var player = $Player
 
 @export var points_bar = 10
 @export var points_bar_subtract = 5
@@ -22,7 +23,7 @@ extends Node2D
 @export var bubble_timer_min_wait: float = 0.8
 @export var bubble_timer_max_wait: float = 3
 
-var letters = "ASDFJKLNEIC"
+var letters = "ASDFJKL"
 
 func _ready():
 	timeLimit_timer.timeout.connect(_on_timeLimit_timer_timeout)
@@ -40,8 +41,11 @@ func _ready():
 func _process(delta):
 	var breathing_bar = $RespirationBar
 	var interpolation_value = breathing_bar.value / breathing_bar.max_value
+	player.update_sprite(interpolation_value)
 	if breathing_bar:
 		breathing_bar.modulate = lerp(color_good, color_bad, interpolation_value)
+	
+
 	
 
 func _on_timeLimit_timer_timeout():
