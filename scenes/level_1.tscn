@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsimwv51sdjhc"]
+[gd_scene load_steps=5 format=3 uid="uid://dsimwv51sdjhc"]
 
 [ext_resource type="PackedScene" uid="uid://5kxehfwigglt" path="res://scenes/player.tscn" id="1_014kd"]
 [ext_resource type="Script" uid="uid://oyf12nifre7x" path="res://scripts/level_1.gd" id="1_bswci"]
+[ext_resource type="Texture2D" uid="uid://4afuo4qo0nc7" path="res://assets/breathing1.png" id="3_5xbjy"]
+[ext_resource type="Script" uid="uid://dg4rkwpbi3xcy" path="res://scenes/breathing_bar.gd" id="4_4nkto"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_bswci")
@@ -17,7 +19,7 @@ offset_bottom = 648.0
 color = Color(0.823932, 0.579755, 0.513106, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_014kd")]
-position = Vector2(538, 470)
+position = Vector2(449, 470)
 
 [node name="BubblesContainer" type="Node2D" parent="."]
 position = Vector2(45, 151)
@@ -36,3 +38,11 @@ one_shot = true
 [node name="TimeLimit" type="Timer" parent="."]
 wait_time = 90.0
 one_shot = true
+
+[node name="BreathingBar" type="TextureRect" parent="."]
+offset_left = 1044.0
+offset_top = 118.0
+offset_right = 1136.0
+offset_bottom = 604.0
+texture = ExtResource("3_5xbjy")
+script = ExtResource("4_4nkto")

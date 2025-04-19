@@ -3,7 +3,7 @@ extends Node2D
 @onready var bubbles_container = $BubblesContainer
 @onready var bubble_scene = preload("res://scenes/bubble.tscn")
 @onready var bubble_timer = $BubbleSpawner
-@onready var respiration_bar = $RespirationBar
+@onready var breathing_bar = $BreathingBar
 @onready var drain_timer = $BubbleSpawner # <- nuevo timer
 @onready var timeLimit_timer = $TimeLimit
 @onready var player = $Player
@@ -17,11 +17,15 @@ extends Node2D
 @export var color_bad = Color(0, 0, 1, 1)  # Blue
 
 #Bubbles
-@export var bubble_max_vel = 400
+@export var bubble_max_vel = 600
 @export var bubble_min_vel = 80
 
 @export var bubble_timer_min_wait: float = 0.8
 @export var bubble_timer_max_wait: float = 3
+
+@export var initial_breathing : float = 50
+var current_breathing: float = 0
+var interpolation_value: float = 0
 
 var letters = "ASDFJKL"
 
@@ -34,18 +38,15 @@ func _ready():
 	
 	drain_timer.timeout.connect(_on_drain_timer_timeout) # <- conectamos
 	drain_timer.start() # <- comenzamos el timer
-	# Ensure the bar exists before accessing it
-	var breathing_bar = $RespirationBar
-	if breathing_bar:
-		breathing_bar.modulate = Color(1, 1, 1, 1)  # Default to white
+	current_breathing = initial_breathing
+	breathing_bar.update_sprite(0.5)
 
 func _process(delta):
+	current_breathing = clampf(current_breathing,0,100)
 	# Continuously change the color of the target node
-	var breathing_bar = $RespirationBar
-	var interpolation_value = breathing_bar.value / breathing_bar.max_value
+	interpolation_value = current_breathing / 100
 	player.update_sprite(interpolation_value)
-	if breathing_bar:
-		breathing_bar.modulate = lerp(color_good, color_bad, interpolation_value)
+	breathing_bar.update_sprite(interpolation_value)
 	
 
 	
@@ -56,8 +57,6 @@ func _on_timeLimit_timer_timeout():
 
 
 func _on_bubble_timer_timeout():
-	var breathing_bar = $RespirationBar
-	var interpolation_value = breathing_bar.value / breathing_bar.max_value
 	var bubble = bubble_scene.instantiate()
 	bubble.letter = letters[randi() % letters.length()]
 	bubble.speed = lerp(bubble_min_vel, bubble_max_vel, interpolation_value)
@@ -71,11 +70,13 @@ func _unhandled_input(event):
 		var pressed_letter = char(event.unicode).to_upper()
 		for bubble in bubbles_container.get_children():
 			if bubble.letter == pressed_letter:
-				if abs(bubble.global_position.y - $Player.global_position.y) < 50:
+				if abs(bubble.global_position.y - $Player.global_position.y) < 400:
 					bubble.queue_free()
-					respiration_bar.value -= points_bar
+					current_breathing -= points_bar
 					return
-		respiration_bar.value += points_bar_subtract
+		current_breathing += points_bar_subtract
+	current_breathing = clampf(current_breathing,0,100)
 
 func _on_drain_timer_timeout():
-	respiration_bar.value += points_bar_drain
+	current_breathing += points_bar_drain
+	current_breathing = clampf(current_breathing,0,100)
