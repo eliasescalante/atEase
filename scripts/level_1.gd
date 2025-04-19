@@ -33,13 +33,11 @@ func _ready():
 	
 	drain_timer.timeout.connect(_on_drain_timer_timeout) # <- conectamos
 	drain_timer.start() # <- comenzamos el timer
-	# Ensure the bar exists before accessing it
 	var breathing_bar = $RespirationBar
 	if breathing_bar:
 		breathing_bar.modulate = Color(1, 1, 1, 1)  # Default to white
 
 func _process(delta):
-	# Continuously change the color of the target node
 	var breathing_bar = $RespirationBar
 	var interpolation_value = breathing_bar.value / breathing_bar.max_value
 	if breathing_bar:
