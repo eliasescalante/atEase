@@ -1,15 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://ca8jnv1017qon"]
+[gd_scene load_steps=10 format=3 uid="uid://ca8jnv1017qon"]
 
 [ext_resource type="Script" uid="uid://dr5xoqwxk51jt" path="res://scripts/level_3.gd" id="1_uwxec"]
-[ext_resource type="PackedScene" uid="uid://5kxehfwigglt" path="res://scenes/player.tscn" id="2_1pn4d"]
-[ext_resource type="PackedScene" uid="uid://ka6fh35j8djl" path="res://scenes/breathing_bar.tscn" id="3_ah8om"]
+[ext_resource type="Script" uid="uid://csb34inkcbps6" path="res://scenes/inventario.gd" id="2_hhfj6"]
+[ext_resource type="Texture2D" uid="uid://hxhqqt8j7gig" path="res://assets/siluetas.png" id="2_p6vls"]
+[ext_resource type="Texture2D" uid="uid://ck0vg1717qqlm" path="res://assets/Pava elec.png" id="3_hhfj6"]
+[ext_resource type="Texture2D" uid="uid://cr22ilycyjmw1" path="res://assets/MATE.png" id="4_wae8j"]
+[ext_resource type="Texture2D" uid="uid://bmb7oojou2jts" path="res://assets/YERBA.png" id="5_ha73p"]
+[ext_resource type="Texture2D" uid="uid://csgrv851201dh" path="res://assets/azucarera.png" id="6_vcx5n"]
+[ext_resource type="Script" uid="uid://b13ik1v6rfnf" path="res://scenes/pava_elec.gd" id="8_wae8j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wae8j"]
+size = Vector2(42.7146, 57.0858)
 
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_uwxec")
 
 [node name="Fondo" type="ColorRect" parent="."]
+offset_top = 1.0
 offset_right = 1154.0
-offset_bottom = 646.0
+offset_bottom = 647.0
 mouse_filter = 1
 color = Color(0.981527, 0.625002, 0.580841, 1)
 
@@ -24,11 +33,90 @@ autostart = true
 [node name="ThoughtsContainer" type="Node2D" parent="."]
 z_index = 3
 
-[node name="Player" parent="." instance=ExtResource("2_1pn4d")]
-position = Vector2(231, 475)
+[node name="Inventario" type="Node2D" parent="."]
+modulate = Color(0.7138, 0.83, 0.79514, 1)
+script = ExtResource("2_hhfj6")
 
-[node name="BreathingBar" parent="." instance=ExtResource("3_ah8om")]
-offset_left = 1030.0
-offset_top = 125.0
-offset_right = 1122.0
-offset_bottom = 611.0
+[node name="Siluetas" type="Sprite2D" parent="Inventario"]
+position = Vector2(1063, 322)
+texture = ExtResource("2_p6vls")
+
+[node name="PavaElec" type="Sprite2D" parent="Inventario"]
+visible = false
+position = Vector2(1066, 106)
+texture = ExtResource("3_hhfj6")
+
+[node name="Mate" type="Sprite2D" parent="Inventario"]
+visible = false
+position = Vector2(1061, 523)
+texture = ExtResource("4_wae8j")
+
+[node name="Yerba" type="Sprite2D" parent="Inventario"]
+visible = false
+position = Vector2(1067.5, 369.887)
+scale = Vector2(0.915094, 0.915094)
+texture = ExtResource("5_ha73p")
+
+[node name="Azucarera" type="Sprite2D" parent="Inventario"]
+visible = false
+position = Vector2(1062, 241)
+scale = Vector2(0.92, 0.92)
+texture = ExtResource("6_vcx5n")
+
+[node name="Pava" type="Area2D" parent="."]
+position = Vector2(249, 461)
+script = ExtResource("8_wae8j")
+
+[node name="Sprite" type="Sprite2D" parent="Pava"]
+texture = ExtResource("3_hhfj6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pava"]
+position = Vector2(-2.5, 1.5)
+scale = Vector2(2.505, 2.505)
+shape = SubResource("RectangleShape2D_wae8j")
+
+[node name="Azucarera" type="Area2D" parent="."]
+position = Vector2(699, 518)
+script = ExtResource("8_wae8j")
+
+[node name="Sprite" type="Sprite2D" parent="Azucarera"]
+texture = ExtResource("6_vcx5n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Azucarera"]
+position = Vector2(-2.5, 1.5)
+scale = Vector2(2.505, 2.505)
+shape = SubResource("RectangleShape2D_wae8j")
+
+[node name="Yerba" type="Area2D" parent="."]
+position = Vector2(680, 177)
+script = ExtResource("8_wae8j")
+
+[node name="Sprite" type="Sprite2D" parent="Yerba"]
+texture = ExtResource("5_ha73p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Yerba"]
+position = Vector2(-2.5, 1.5)
+scale = Vector2(2.505, 2.505)
+shape = SubResource("RectangleShape2D_wae8j")
+
+[node name="Mate" type="Area2D" parent="."]
+position = Vector2(146, 153)
+script = ExtResource("8_wae8j")
+
+[node name="Sprite" type="Sprite2D" parent="Mate"]
+position = Vector2(-2, 0)
+texture = ExtResource("4_wae8j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mate"]
+position = Vector2(-2.5, 1.5)
+scale = Vector2(2.505, 2.505)
+shape = SubResource("RectangleShape2D_wae8j")
+
+[connection signal="input_event" from="Pava" to="Pava" method="input_event"]
+[connection signal="object_clicked" from="Pava" to="." method="_on_pava_clicked"]
+[connection signal="input_event" from="Azucarera" to="Azucarera" method="input_event"]
+[connection signal="object_clicked" from="Azucarera" to="." method="_on_azucarera_clicked"]
+[connection signal="input_event" from="Yerba" to="Yerba" method="input_event"]
+[connection signal="object_clicked" from="Yerba" to="." method="_on_yerba_clicked"]
+[connection signal="input_event" from="Mate" to="Mate" method="input_event"]
+[connection signal="object_clicked" from="Mate" to="." method="_on_mate_clicked"]
