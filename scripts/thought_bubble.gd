@@ -5,15 +5,23 @@ signal thought_clicked(was_intrusive: bool)
 @export var is_intrusive: bool = true
 @export var move_speed: float = 100
 @onready var label = $Label
+@onready var bubble = $bubble
+
+@export var intrusive_text_color : Color
+@export var intrusive_bubble_color : Color
+@export var positive_text_color : Color
+@export var positive_bubble_color : Color
 
 var thought_text: String = ""
 
 func _ready():
 	label.text = thought_text
 	if is_intrusive:
-		label.modulate = Color(1, 0.5, 0.5)
+		label.modulate = intrusive_text_color
+		bubble.modulate = intrusive_bubble_color
 	else:
-		label.modulate = Color(0.5, 1, 0.5)
+		label.modulate = positive_text_color
+		bubble.modulate = positive_bubble_color
 
 func _process(delta):
 	position.y -= move_speed * delta

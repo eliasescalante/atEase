@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var thoughts_container = $ThoughtsContainer
 @onready var thought_scene = preload("res://scenes/thought_bubble.tscn")
-@onready var respiration_bar = $RespirationBar
+@onready var breathing_bar = $BreathingBar
 @onready var spawner_timer = $ThoughtSpawner
 @onready var drain_timer = $DrainTimer
 @onready var time_limit = $TimeLimit
@@ -12,8 +12,9 @@ extends Node2D
 @export var points_bar_drain = 2
 
 #Breathing Bar
-@export var color_good = Color(1, 0, 0, 1)  # Red
-@export var color_bad = Color(0, 0, 1, 1)  # Blue
+@export var initial_breathing : float = 50
+var current_breathing: float = 0
+var interpolation_value: float = 0
 
 @export var intrusive_thoughts = [
 	"No puedo respirar", 
@@ -38,10 +39,13 @@ func _ready():
 
 	drain_timer.timeout.connect(_on_drain_timeout)
 	drain_timer.start()
+	current_breathing = initial_breathing
+	breathing_bar.update_sprite(0.5)
 
 func _process(delta):
-	var interp = respiration_bar.value / respiration_bar.max_value
-	respiration_bar.modulate = lerp(color_good, color_bad, interp)
+	current_breathing = clampf(current_breathing,0,100)
+	interpolation_value = current_breathing / 100
+	breathing_bar.update_sprite(interpolation_value)
 
 func _on_spawner_timeout():
 	var thought = thought_scene.instantiate()
@@ -60,12 +64,12 @@ func _on_spawner_timeout():
 
 func _on_thought_clicked(was_intrusive: bool):
 	if was_intrusive:
-		respiration_bar.value = max(0, respiration_bar.value - points_bar)
+		current_breathing = clampf(current_breathing - points_bar,0,100)
 	else:
-		respiration_bar.value = min(respiration_bar.max_value, respiration_bar.value + points_bar_subtract)
+		current_breathing = clampf(current_breathing + points_bar_subtract,0,100)
 
 func _on_drain_timeout():
-	respiration_bar.value = min(respiration_bar.max_value, respiration_bar.value + points_bar_drain)
+	current_breathing = clampf(current_breathing + points_bar_drain, 0 ,100)
 
 func _on_time_limit_timeout():
 	get_tree().change_scene_to_file("res://scenes/main.tscn")  # Cambiá por la siguiente escena pero como no esta todavia lo deje en main

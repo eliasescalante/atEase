@@ -43,7 +43,6 @@ func _ready():
 
 func _process(delta):
 	current_breathing = clampf(current_breathing,0,100)
-	# Continuously change the color of the target node
 	interpolation_value = current_breathing / 100
 	player.update_sprite(interpolation_value)
 	breathing_bar.update_sprite(interpolation_value)

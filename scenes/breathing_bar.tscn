@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ka6fh35j8djl"]
+
+[ext_resource type="Texture2D" uid="uid://4afuo4qo0nc7" path="res://assets/breathing1.png" id="1_bd8gs"]
+[ext_resource type="Script" uid="uid://dg4rkwpbi3xcy" path="res://scenes/breathing_bar.gd" id="2_ywn6f"]
+
+[node name="BreathingBar" type="TextureRect"]
+offset_left = 1044.0
+offset_top = 118.0
+offset_right = 1136.0
+offset_bottom = 604.0
+texture = ExtResource("1_bd8gs")
+script = ExtResource("2_ywn6f")
