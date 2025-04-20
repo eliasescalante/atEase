@@ -56,6 +56,7 @@ Este juego nace de la necesidad de hablar sobre salud mental desde el juego, con
 
 - **Elías Escalante** – Programación
 - **Fernanda Di Zoccolo** - Game Designer
+- **Federico Croci** - Programación
 - *(hay que agregar a los demas XD)*
 
 ---
