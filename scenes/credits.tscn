@@ -1,11 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhlwvw0iqurs7"]
+[gd_scene load_steps=7 format=3 uid="uid://bhlwvw0iqurs7"]
 
 [ext_resource type="Texture2D" uid="uid://b828qrgopj1yj" path="res://assets/level3_bkg.png" id="1_2ckv8"]
 [ext_resource type="Script" uid="uid://cjuttq1vafodo" path="res://scripts/main.gd" id="1_2fbfq"]
 [ext_resource type="Texture2D" uid="uid://cr22ilycyjmw1" path="res://assets/MATE.png" id="2_0ctdu"]
 [ext_resource type="Texture2D" uid="uid://b8k0y52v8wjbx" path="res://assets/boton_credit ingles.png" id="3_0ctdu"]
+[ext_resource type="FontFile" uid="uid://or841k6i32r5" path="res://assets/fonts/Mali-BoldItalic.ttf" id="4_8gwij"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2fbfq"]
+font = ExtResource("4_8gwij")
 font_size = 35
 shadow_size = 17
 shadow_color = Color(0, 0, 0, 1)

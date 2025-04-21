@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://pbp3cn6wby21"]
+[gd_scene load_steps=7 format=3 uid="uid://pbp3cn6wby21"]
 
 [ext_resource type="Script" uid="uid://cjuttq1vafodo" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://cv37ueaclj56o" path="res://assets/pantalla de inicio.png" id="2_0wfyh"]
+[ext_resource type="FontFile" uid="uid://dm2u0518dsump" path="res://assets/fonts/Mali-Bold.ttf" id="2_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://7hi5k40ujwka" path="res://assets/boton_play.png" id="3_sugp2"]
 [ext_resource type="Texture2D" uid="uid://b8k0y52v8wjbx" path="res://assets/boton_credit ingles.png" id="4_jyhfs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sgp6g"]
-font_size = 101
+font = ExtResource("2_tbgi4")
+font_size = 120
 shadow_size = 14
 shadow_color = Color(0, 0, 0, 0.796078)
 
@@ -14,10 +16,10 @@ shadow_color = Color(0, 0, 0, 0.796078)
 script = ExtResource("1_o5qli")
 
 [node name="Titulo" type="Label" parent="."]
-offset_left = 357.0
-offset_top = 211.0
-offset_right = 746.0
-offset_bottom = 350.0
+offset_left = 324.0
+offset_top = 200.0
+offset_right = 835.0
+offset_bottom = 356.0
 rotation = -0.303534
 text = "AT EASE"
 label_settings = SubResource("LabelSettings_sgp6g")
