@@ -18,4 +18,5 @@ func _ready():
 
 func update_sprite(interpolation: float):
 	var npc_state = roundi(interpolation * (sprite_textures.size()-1))
+	print(npc_state)
 	texture = sprite_textures[npc_state]

@@ -20,4 +20,11 @@ func play_interactionB():
 func play_respiracion_calmada():
 	$SFX/RespiracionCalmada.play()
 func play_respiracion_rapida():
-	$SFX/RespiraacionRapida
+	$SFX/RespiraacionRapida.play()
+
+#para detener el audio
+
+func stop_respiracion_rapida():
+	$SFX/RespiraacionRapida.stop()
+func stop_respiracion_calmada():
+	$SFX/RespiracionCalmada.stop()
