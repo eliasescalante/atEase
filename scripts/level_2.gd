@@ -75,4 +75,4 @@ func _on_drain_timeout():
 	current_breathing = clampf(current_breathing + points_bar_drain, 0 ,100)
 
 func _on_time_limit_timeout():
-	get_tree().change_scene_to_file("res://scenes/level_3.tscn")  # Cambiá por la siguiente escena pero como no esta todavia lo deje en main
+	get_tree().change_scene_to_file("res://scenes/intro_2.tscn")  # Cambiá por la siguiente escena pero como no esta todavia lo deje en main
