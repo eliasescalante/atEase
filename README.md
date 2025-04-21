@@ -54,10 +54,12 @@ Este juego nace de la necesidad de hablar sobre salud mental desde el juego, con
 
 ## 👥 Créditos
 
-- **Elías Escalante** – Programación
+- **Elías Escalante** – Developer
 - **Fernanda Di Zoccolo** - Game Designer
-- **Federico Croci** - Programación
-- *(hay que agregar a los demas XD)*
+- **Federico Croci** - Developer
+- *Luz Castelluber* - Arte y Graphic design
+- *Malu Ruggieri* -  Arte y Graphic design
+- *Adrian Betancourt* - Sound Design
 
 ---
 
