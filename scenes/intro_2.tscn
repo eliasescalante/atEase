@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://bai20b87b0m58"]
+
+[ext_resource type="Script" uid="uid://kci6hl2ea23l" path="res://scripts/intro_2.gd" id="1_1y7hu"]
+[ext_resource type="FontFile" uid="uid://dm2u0518dsump" path="res://assets/fonts/Mali-Bold.ttf" id="1_i4elq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1y7hu"]
+font = ExtResource("1_i4elq")
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_nt4xl"]
+font = ExtResource("1_i4elq")
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_sgi5e"]
+font = ExtResource("1_i4elq")
+font_size = 60
+
+[node name="Intro2" type="Node2D"]
+script = ExtResource("1_1y7hu")
+next_scene_path = "uid://ca8jnv1017qon"
+
+[node name="Fondo" type="ColorRect" parent="."]
+offset_right = 1163.0
+offset_bottom = 656.0
+color = Color(0.0295066, 0.0295066, 0.0295066, 1)
+
+[node name="Titulo" type="Label" parent="."]
+offset_left = 41.0
+offset_top = 168.0
+offset_right = 1138.0
+offset_bottom = 246.0
+text = "-HEY, HOW ABOUT SOME 'MATES' ? "
+label_settings = SubResource("LabelSettings_1y7hu")
+
+[node name="Titulo2" type="Label" parent="."]
+offset_left = 157.0
+offset_top = 279.0
+offset_right = 1140.0
+offset_bottom = 383.0
+text = "GRAB ALL THE THINGS WE "
+label_settings = SubResource("LabelSettings_nt4xl")
+
+[node name="Titulo3" type="Label" parent="."]
+offset_left = 262.0
+offset_top = 419.0
+offset_right = 941.0
+offset_bottom = 497.0
+text = "NEED TO MAKE THEM-"
+label_settings = SubResource("LabelSettings_sgi5e")
