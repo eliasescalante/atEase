@@ -21,7 +21,7 @@ font_size = 50
 
 [node name="Fin" type="Node2D"]
 script = ExtResource("1_70gu0")
-next_scene_path = "uid://bhlwvw0iqurs7"
+next_scene_path = "uid://blb5yieo76l45"
 
 [node name="Fondo" type="ColorRect" parent="."]
 offset_right = 1165.0

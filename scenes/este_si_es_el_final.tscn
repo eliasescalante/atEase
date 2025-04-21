@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://blb5yieo76l45"]
+
+[ext_resource type="Texture2D" uid="uid://2s0yvb6axge0" path="res://assets/image.png" id="1_2liy1"]
+[ext_resource type="Script" uid="uid://dqoxhptoir660" path="res://scripts/este_si_es_el_final.gd" id="1_53rv3"]
+
+[node name="finale" type="Node2D"]
+script = ExtResource("1_53rv3")
+next_scene_path = "uid://bhlwvw0iqurs7"
+
+[node name="fondito" type="Sprite2D" parent="."]
+position = Vector2(575, 322)
+scale = Vector2(0.931178, 0.837759)
+texture = ExtResource("1_2liy1")
