@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cr22ilycyjmw1" path="res://assets/MATE.png" id="4_wae8j"]
 [ext_resource type="Texture2D" uid="uid://bmb7oojou2jts" path="res://assets/YERBA.png" id="5_ha73p"]
 [ext_resource type="Texture2D" uid="uid://csgrv851201dh" path="res://assets/azucarera.png" id="6_vcx5n"]
+[ext_resource type="Texture2D" uid="uid://deg4oa3nedkh2" path="res://assets/nivel3.png" id="8_ha73p"]
 [ext_resource type="Script" uid="uid://b13ik1v6rfnf" path="res://scenes/pava_elec.gd" id="8_wae8j"]
-[ext_resource type="Texture2D" uid="uid://b828qrgopj1yj" path="res://assets/level3_bkg.png" id="9_ha73p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wae8j"]
 size = Vector2(42.7146, 57.0858)
@@ -27,13 +27,20 @@ autostart = true
 [node name="ThoughtsContainer" type="Node2D" parent="."]
 z_index = 3
 
+[node name="Fondo" type="Sprite2D" parent="."]
+modulate = Color(0.74, 0.74, 0.74, 1)
+z_index = -1
+position = Vector2(566, 325)
+scale = Vector2(1.04008, 1.0463)
+texture = ExtResource("8_ha73p")
+
 [node name="Inventario" type="Node2D" parent="."]
 modulate = Color(0.7138, 0.83, 0.79514, 1)
 position = Vector2(-20, 2)
 script = ExtResource("2_hhfj6")
 
 [node name="Siluetas" type="Sprite2D" parent="Inventario"]
-position = Vector2(1063, 322)
+position = Vector2(1100, 319)
 texture = ExtResource("2_p6vls")
 
 [node name="PavaElec" type="Sprite2D" parent="Inventario"]
@@ -59,22 +66,24 @@ scale = Vector2(0.92, 0.92)
 texture = ExtResource("6_vcx5n")
 
 [node name="Pava" type="Area2D" parent="."]
-position = Vector2(207, 300)
+position = Vector2(321, 299)
 scale = Vector2(0.560112, 0.560112)
 script = ExtResource("8_wae8j")
+metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="Pava"]
 texture = ExtResource("3_hhfj6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pava"]
-position = Vector2(-2.5, 1.5)
+position = Vector2(-7.14142, 3.57069)
 scale = Vector2(2.505, 2.505)
 shape = SubResource("RectangleShape2D_wae8j")
 
 [node name="Azucarera" type="Area2D" parent="."]
-position = Vector2(675, 293)
+position = Vector2(794, 312)
 scale = Vector2(0.336473, 0.336473)
 script = ExtResource("8_wae8j")
+metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="Azucarera"]
 texture = ExtResource("6_vcx5n")
@@ -85,9 +94,10 @@ scale = Vector2(2.505, 2.505)
 shape = SubResource("RectangleShape2D_wae8j")
 
 [node name="Yerba" type="Area2D" parent="."]
-position = Vector2(807, 308)
+position = Vector2(927, 334)
 scale = Vector2(0.475937, 0.475937)
 script = ExtResource("8_wae8j")
+metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="Yerba"]
 texture = ExtResource("5_ha73p")
@@ -101,6 +111,7 @@ shape = SubResource("RectangleShape2D_wae8j")
 position = Vector2(509, 445)
 scale = Vector2(0.499445, 0.499445)
 script = ExtResource("8_wae8j")
+metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="Mate"]
 position = Vector2(-2, 0)
@@ -110,13 +121,6 @@ texture = ExtResource("4_wae8j")
 position = Vector2(-2.5, 1.5)
 scale = Vector2(2.505, 2.505)
 shape = SubResource("RectangleShape2D_wae8j")
-
-[node name="Fondo" type="Sprite2D" parent="."]
-modulate = Color(0.74, 0.74, 0.74, 1)
-z_index = -1
-position = Vector2(467.143, 326)
-scale = Vector2(0.834184, 0.834184)
-texture = ExtResource("9_ha73p")
 
 [connection signal="input_event" from="Pava" to="Pava" method="input_event"]
 [connection signal="object_clicked" from="Pava" to="." method="_on_pava_clicked"]
