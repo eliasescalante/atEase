@@ -15,6 +15,9 @@ extends Node
 
 func play_interaction():
 	$SFX/InteractionsB.play()
-
 func play_interactionB():
 	$SFX/InteractionsA.play()
+func play_respiracion_calmada():
+	$SFX/RespiracionCalmada.play()
+func play_respiracion_rapida():
+	$SFX/RespiraacionRapida
