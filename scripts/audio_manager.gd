@@ -11,3 +11,7 @@ extends Node
 @export var poof_sfx: AudioStreamPlayer # Sonido para dar inicio a los minijuegos
 @export var interactions_A: AudioStreamPlayer
 @export var interactions_B: AudioStreamPlayer
+
+
+func play_interaction():
+	$SFX/InteractionsB.play()

@@ -71,6 +71,7 @@ func _unhandled_input(event):
 			if bubble.letter == pressed_letter:
 				if abs(bubble.global_position.y - $Player.global_position.y) < 400:
 					bubble.queue_free()
+					AudioManager.play_interaction()
 					current_breathing -= points_bar
 					return
 		current_breathing += points_bar_subtract
