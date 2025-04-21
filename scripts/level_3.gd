@@ -11,7 +11,7 @@ extends Node2D
 @export var points_bar_subtract = 5
 @export var points_bar_drain = 2
 @export var inventory_limit: int = 4
-@export_file("*.tscn") var end_scene_path: String = "res://scenes/creditos.tscn"
+@export_file("*.tscn") var end_scene_path: String = "res://scenes/fin.tscn"
 
 
 #Breathing Bar

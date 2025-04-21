@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsimwv51sdjhc"]
+[gd_scene load_steps=5 format=3 uid="uid://dsimwv51sdjhc"]
 
 [ext_resource type="PackedScene" uid="uid://5kxehfwigglt" path="res://scenes/player.tscn" id="1_014kd"]
 [ext_resource type="Script" uid="uid://oyf12nifre7x" path="res://scripts/level_1.gd" id="1_bswci"]
+[ext_resource type="Texture2D" uid="uid://bcxfp5grqedod" path="res://assets/nivel_1_y_2.png" id="2_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://ka6fh35j8djl" path="res://scenes/breathing_bar.tscn" id="3_rus8k"]
 
 [node name="Level1" type="Node2D"]
@@ -10,7 +11,15 @@ color_good = Color(0.0405001, 0.81, 0, 1)
 color_bad = Color(0.827464, 0.220709, 0.0999075, 1)
 bubble_timer_max_wait = 1.5
 
+[node name="fondo2" type="Sprite2D" parent="."]
+position = Vector2(591, 325)
+scale = Vector2(1.35938, 1.13297)
+texture = ExtResource("2_5xbjy")
+region_enabled = true
+region_rect = Rect2(107.597, 0, 896.02, 643.351)
+
 [node name="fondo" type="ColorRect" parent="."]
+visible = false
 z_index = -1
 offset_top = 3.0
 offset_right = 1158.0

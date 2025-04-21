@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ca8jnv1017qon"]
+[gd_scene load_steps=12 format=3 uid="uid://ca8jnv1017qon"]
 
 [ext_resource type="Script" uid="uid://dr5xoqwxk51jt" path="res://scripts/level_3.gd" id="1_uwxec"]
 [ext_resource type="Script" uid="uid://csb34inkcbps6" path="res://scenes/inventario.gd" id="2_hhfj6"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://csgrv851201dh" path="res://assets/azucarera.png" id="6_vcx5n"]
 [ext_resource type="Texture2D" uid="uid://deg4oa3nedkh2" path="res://assets/nivel3.png" id="8_ha73p"]
 [ext_resource type="Script" uid="uid://b13ik1v6rfnf" path="res://scenes/pava_elec.gd" id="8_wae8j"]
+[ext_resource type="Texture2D" uid="uid://bjxjg3txvf6sm" path="res://assets/objetoss.png" id="10_vcx5n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wae8j"]
 size = Vector2(42.7146, 57.0858)
@@ -27,41 +28,35 @@ autostart = true
 [node name="ThoughtsContainer" type="Node2D" parent="."]
 z_index = 3
 
-[node name="Fondo" type="Sprite2D" parent="."]
-modulate = Color(0.74, 0.74, 0.74, 1)
-z_index = -1
-position = Vector2(566, 325)
-scale = Vector2(1.04008, 1.0463)
-texture = ExtResource("8_ha73p")
-
 [node name="Inventario" type="Node2D" parent="."]
 modulate = Color(0.7138, 0.83, 0.79514, 1)
 position = Vector2(-20, 2)
 script = ExtResource("2_hhfj6")
 
 [node name="Siluetas" type="Sprite2D" parent="Inventario"]
-position = Vector2(1100, 319)
+position = Vector2(1110, 342)
+scale = Vector2(1.08, 1.07273)
 texture = ExtResource("2_p6vls")
 
 [node name="PavaElec" type="Sprite2D" parent="Inventario"]
 visible = false
-position = Vector2(1066, 106)
+position = Vector2(1116, 112)
 texture = ExtResource("3_hhfj6")
 
 [node name="Mate" type="Sprite2D" parent="Inventario"]
 visible = false
-position = Vector2(1061, 523)
+position = Vector2(1106, 562)
 texture = ExtResource("4_wae8j")
 
 [node name="Yerba" type="Sprite2D" parent="Inventario"]
 visible = false
-position = Vector2(1064.5, 374.887)
+position = Vector2(1114, 397)
 scale = Vector2(0.990566, 0.85954)
 texture = ExtResource("5_ha73p")
 
 [node name="Azucarera" type="Sprite2D" parent="Inventario"]
 visible = false
-position = Vector2(1062, 241)
+position = Vector2(1110, 255)
 scale = Vector2(0.92, 0.92)
 texture = ExtResource("6_vcx5n")
 
@@ -94,7 +89,7 @@ scale = Vector2(2.505, 2.505)
 shape = SubResource("RectangleShape2D_wae8j")
 
 [node name="Yerba" type="Area2D" parent="."]
-position = Vector2(927, 334)
+position = Vector2(941, 315)
 scale = Vector2(0.475937, 0.475937)
 script = ExtResource("8_wae8j")
 metadata/_edit_group_ = true
@@ -121,6 +116,76 @@ texture = ExtResource("4_wae8j")
 position = Vector2(-2.5, 1.5)
 scale = Vector2(2.505, 2.505)
 shape = SubResource("RectangleShape2D_wae8j")
+
+[node name="Fondo" type="Sprite2D" parent="."]
+modulate = Color(0.74, 0.74, 0.74, 1)
+z_index = -1
+position = Vector2(575, 324)
+scale = Vector2(1.04008, 1.0463)
+texture = ExtResource("8_ha73p")
+
+[node name="platito" type="Sprite2D" parent="."]
+position = Vector2(544, 481)
+scale = Vector2(0.220905, 0.386531)
+texture = ExtResource("10_vcx5n")
+region_enabled = true
+region_rect = Rect2(155.662, 30.5005, 464.092, 271.104)
+
+[node name="platito2" type="Sprite2D" parent="."]
+position = Vector2(831.375, 309.313)
+scale = Vector2(0.196659, 0.329797)
+texture = ExtResource("10_vcx5n")
+region_enabled = true
+region_rect = Rect2(155.662, 30.5005, 464.092, 271.104)
+
+[node name="cuchara" type="Sprite2D" parent="."]
+position = Vector2(669, 273)
+scale = Vector2(0.229469, 0.151987)
+texture = ExtResource("10_vcx5n")
+region_enabled = true
+region_rect = Rect2(0, 0, 175.907, 551.362)
+
+[node name="cuchara2" type="Sprite2D" parent="."]
+position = Vector2(624, 274)
+scale = Vector2(0.229469, 0.151987)
+texture = ExtResource("10_vcx5n")
+region_enabled = true
+region_rect = Rect2(0, 0, 185.097, 551.362)
+
+[node name="tacitas" type="Sprite2D" parent="."]
+position = Vector2(323, 332)
+scale = Vector2(0.159884, 0.188889)
+texture = ExtResource("10_vcx5n")
+region_enabled = true
+region_rect = Rect2(506.745, 284.853, 344.623, 225.154)
+
+[node name="tacitas2" type="Sprite2D" parent="."]
+position = Vector2(761, 326)
+scale = Vector2(0.159884, 0.188889)
+texture = ExtResource("10_vcx5n")
+region_enabled = true
+region_rect = Rect2(506.745, 284.853, 344.623, 225.154)
+
+[node name="galletitas" type="Sprite2D" parent="."]
+position = Vector2(905.063, 306.813)
+scale = Vector2(0.2629, 0.263631)
+texture = ExtResource("10_vcx5n")
+region_enabled = true
+region_rect = Rect2(998.408, 390.538, 281.592, 431.928)
+
+[node name="olla" type="Sprite2D" parent="."]
+position = Vector2(577, 302)
+scale = Vector2(0.265714, 0.310726)
+texture = ExtResource("10_vcx5n")
+region_enabled = true
+region_rect = Rect2(0, 532.982, 525.125, 317.018)
+
+[node name="harina" type="Sprite2D" parent="."]
+position = Vector2(638, 491)
+scale = Vector2(0.34127, 0.362464)
+texture = ExtResource("10_vcx5n")
+region_enabled = true
+region_rect = Rect2(745.684, 500.817, 252.724, 349.183)
 
 [connection signal="input_event" from="Pava" to="Pava" method="input_event"]
 [connection signal="object_clicked" from="Pava" to="." method="_on_pava_clicked"]
