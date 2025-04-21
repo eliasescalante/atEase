@@ -15,6 +15,10 @@ run/main_scene="uid://pbp3cn6wby21"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AudioManager="*res://scenes/audio_manager.tscn"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
