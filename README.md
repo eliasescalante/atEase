@@ -57,8 +57,8 @@ Este juego nace de la necesidad de hablar sobre salud mental desde el juego, con
 - **Elías Escalante** – Developer
 - **Fernanda Di Zoccolo** - Game Designer
 - **Federico Croci** - Developer
-- *Luz Castelluber* - Arte y Graphic design
-- *Malu Ruggieri* -  Arte y Graphic design
+- *Luz Castelluber* - Arts y Graphic design
+- *Malu Ruggieri* -  Arts y Graphic design
 - *Adrian Betancourt* - Sound Design
 
 ---
