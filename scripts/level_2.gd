@@ -20,17 +20,17 @@ var current_breathing: float = 0
 var interpolation_value: float = 0
 
 @export var intrusive_thoughts = [
-	"No puedo respirar", 
-	"Esto no va a pasar", 
-	"Estoy perdiendo el control", 
-	"Me voy a desmayar"
+	"I can't breathe", 
+	"This isn't going to pass", 
+	"I'm losing control", 
+	"I'm going to faint"
 ]
 
 @export var positive_thoughts = [
-	"Va a pasar", 
-	"No estás solo", 
-	"Es solo un momento", 
-	"Podés con esto"
+	"This will pass",
+	"You're not alone",
+	"It's just a moment",
+	"You can get through this"
 ]
 
 func _ready():
