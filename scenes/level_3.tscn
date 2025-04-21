@@ -29,7 +29,7 @@ z_index = 3
 
 [node name="Inventario" type="Node2D" parent="."]
 modulate = Color(0.7138, 0.83, 0.79514, 1)
-position = Vector2(-73, 0)
+position = Vector2(-20, 2)
 script = ExtResource("2_hhfj6")
 
 [node name="Siluetas" type="Sprite2D" parent="Inventario"]
@@ -48,8 +48,8 @@ texture = ExtResource("4_wae8j")
 
 [node name="Yerba" type="Sprite2D" parent="Inventario"]
 visible = false
-position = Vector2(1067.5, 369.887)
-scale = Vector2(0.915094, 0.915094)
+position = Vector2(1064.5, 374.887)
+scale = Vector2(0.990566, 0.85954)
 texture = ExtResource("5_ha73p")
 
 [node name="Azucarera" type="Sprite2D" parent="Inventario"]
@@ -59,7 +59,8 @@ scale = Vector2(0.92, 0.92)
 texture = ExtResource("6_vcx5n")
 
 [node name="Pava" type="Area2D" parent="."]
-position = Vector2(506, 270)
+position = Vector2(207, 300)
+scale = Vector2(0.560112, 0.560112)
 script = ExtResource("8_wae8j")
 
 [node name="Sprite" type="Sprite2D" parent="Pava"]
@@ -71,7 +72,8 @@ scale = Vector2(2.505, 2.505)
 shape = SubResource("RectangleShape2D_wae8j")
 
 [node name="Azucarera" type="Area2D" parent="."]
-position = Vector2(695, 426)
+position = Vector2(675, 293)
+scale = Vector2(0.336473, 0.336473)
 script = ExtResource("8_wae8j")
 
 [node name="Sprite" type="Sprite2D" parent="Azucarera"]
@@ -83,7 +85,8 @@ scale = Vector2(2.505, 2.505)
 shape = SubResource("RectangleShape2D_wae8j")
 
 [node name="Yerba" type="Area2D" parent="."]
-position = Vector2(577, 417)
+position = Vector2(807, 308)
+scale = Vector2(0.475937, 0.475937)
 script = ExtResource("8_wae8j")
 
 [node name="Sprite" type="Sprite2D" parent="Yerba"]
@@ -95,7 +98,8 @@ scale = Vector2(2.505, 2.505)
 shape = SubResource("RectangleShape2D_wae8j")
 
 [node name="Mate" type="Area2D" parent="."]
-position = Vector2(221, 271)
+position = Vector2(509, 445)
+scale = Vector2(0.499445, 0.499445)
 script = ExtResource("8_wae8j")
 
 [node name="Sprite" type="Sprite2D" parent="Mate"]
@@ -110,7 +114,8 @@ shape = SubResource("RectangleShape2D_wae8j")
 [node name="Fondo" type="Sprite2D" parent="."]
 modulate = Color(0.74, 0.74, 0.74, 1)
 z_index = -1
-position = Vector2(543, 324)
+position = Vector2(467.143, 326)
+scale = Vector2(0.834184, 0.834184)
 texture = ExtResource("9_ha73p")
 
 [connection signal="input_event" from="Pava" to="Pava" method="input_event"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xd0tudv82qyg"
-path="res://.godot/imported/pngwing.com.png-cd59a1e01f959cf37113de7c231fb92c.ctex"
+uid="uid://cv37ueaclj56o"
+path="res://.godot/imported/pantalla de inicio.png-1e047dcaf2d36116c3f4efec21e91d59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pngwing.com.png"
-dest_files=["res://.godot/imported/pngwing.com.png-cd59a1e01f959cf37113de7c231fb92c.ctex"]
+source_file="res://assets/pantalla de inicio.png"
+dest_files=["res://.godot/imported/pantalla de inicio.png-1e047dcaf2d36116c3f4efec21e91d59.ctex"]
 
 [params]
 
