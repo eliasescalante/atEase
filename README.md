@@ -65,4 +65,3 @@ Este juego nace de la necesidad de hablar sobre salud mental desde el juego, con
 ## 🚧 Estado del Proyecto
 
 En desarrollo. ¡Volvé pronto para probar la demo!
-

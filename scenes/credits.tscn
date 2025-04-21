@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhlwvw0iqurs7"]
+
+[ext_resource type="Texture2D" uid="uid://b828qrgopj1yj" path="res://assets/level3_bkg.png" id="1_2ckv8"]
+[ext_resource type="Script" uid="uid://cjuttq1vafodo" path="res://scripts/main.gd" id="1_2fbfq"]
+[ext_resource type="Texture2D" uid="uid://cr22ilycyjmw1" path="res://assets/MATE.png" id="2_0ctdu"]
+[ext_resource type="Texture2D" uid="uid://b8k0y52v8wjbx" path="res://assets/boton_credit ingles.png" id="3_0ctdu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2fbfq"]
+font_size = 35
+shadow_size = 17
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_2fbfq")
+
+[node name="Level3Bkg" type="Sprite2D" parent="."]
+modulate = Color(0.27, 0.27, 0.27, 1)
+position = Vector2(438, 154)
+scale = Vector2(1.28954, 1.28954)
+texture = ExtResource("1_2ckv8")
+
+[node name="Mate" type="Sprite2D" parent="."]
+modulate = Color(0.33, 0.33, 0.33, 1)
+position = Vector2(706, 280)
+texture = ExtResource("2_0ctdu")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 71.0
+offset_top = 83.0
+offset_right = 338.0
+offset_bottom = 288.0
+text = "Game Design: Fernanda Di Zoccolo
+Programming: Elias Escalante, Federico Croci
+Graphic design: Luz Castelluber, Malu Ruggieri
+Sound design: Adrian Betancourt"
+label_settings = SubResource("LabelSettings_2fbfq")
+
+[node name="CreditsReturnButton" type="TextureButton" parent="."]
+offset_left = 441.0
+offset_top = 419.0
+offset_right = 758.0
+offset_bottom = 571.0
+texture_normal = ExtResource("3_0ctdu")
+
+[connection signal="pressed" from="CreditsReturnButton" to="." method="_on_credits_return_pressed"]

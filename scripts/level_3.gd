@@ -36,4 +36,4 @@ func _on_mate_clicked():
 
 
 func _on_time_limit_timeout():
-	get_tree().change_scene_to_file("res://scenes/main.tscn")  # Cambiá por la siguiente escena pero como no esta todavia lo deje en main
+	get_tree().change_scene_to_file("res://scenes/creditos.tscn")  # Cambiá por la siguiente escena pero como no esta todavia lo deje en main
