@@ -6,6 +6,9 @@ extends Node2D
 @onready var spawner_timer = $ThoughtSpawner
 @onready var drain_timer = $DrainTimer
 @onready var time_limit = $TimeLimit
+@onready var audio_manager = $AudioManager
+
+
 
 @export var points_bar = 10
 @export var points_bar_subtract = 5
@@ -67,7 +70,7 @@ func _on_thought_clicked(was_intrusive: bool):
 		current_breathing = clampf(current_breathing - points_bar,0,100)
 	else:
 		current_breathing = clampf(current_breathing + points_bar_subtract,0,100)
-
+		AudioManager.play_interactionB()
 func _on_drain_timeout():
 	current_breathing = clampf(current_breathing + points_bar_drain, 0 ,100)
 

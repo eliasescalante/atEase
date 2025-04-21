@@ -15,3 +15,6 @@ extends Node
 
 func play_interaction():
 	$SFX/InteractionsB.play()
+
+func play_interactionB():
+	$SFX/InteractionsA.play()

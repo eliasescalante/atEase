@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bluaddhs2sixk"]
+[gd_scene load_steps=5 format=3 uid="uid://bluaddhs2sixk"]
 
 [ext_resource type="PackedScene" uid="uid://5kxehfwigglt" path="res://scenes/player.tscn" id="1_3bmlt"]
 [ext_resource type="Script" uid="uid://derff1fji2u1f" path="res://scripts/level_2.gd" id="1_jm1iu"]
 [ext_resource type="PackedScene" uid="uid://ka6fh35j8djl" path="res://scenes/breathing_bar.tscn" id="3_pbc48"]
+[ext_resource type="PackedScene" uid="uid://cngcrhtmvjcaj" path="res://scenes/audio_manager.tscn" id="4_eqxsl"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_jm1iu")
@@ -32,3 +33,5 @@ offset_left = 1030.0
 offset_top = 125.0
 offset_right = 1122.0
 offset_bottom = 611.0
+
+[node name="AudioManager" parent="." instance=ExtResource("4_eqxsl")]
